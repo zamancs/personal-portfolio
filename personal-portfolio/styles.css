@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Poppins, sans-serif;
+  background: linear-gradient(to left, #112152, #080d24);
+  color: white;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0x;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #080c26;
+  padding: 15px;
+  z-index: 1000;
+  box-shadow: 10px -10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  padding-top: 80px; /* Adjust padding to avoid content under the fixed navbar */
+  min-height: 100vh; /* Ensure hero section takes full height */
+  width: 100%;
+  background: none;
+}
+
+.hero-content {
+  max-width: 50%;
+  margin-right: 50px;
+}
+
+span {
+  color: rgb(200, 239, 255);
+}
+h1 {
+  font-size: 60px;
+  font-weight: 850;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.social-icons a img {
+  width: 40px;
+  height: 40px;
+}
+
+.resume-btn {
+  padding: 10px 35px;
+  background-color: #24486e;
+  color: #fff;
+  border: none;
+  border-radius: 19px;
+  font-family: Poppins, sans-serif;
+}
+
+.resume-btn a {
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.hero-image img {
+  width: 350px;
+  height: auto;
+  border-radius: 50%;
+  border: 1px solid rgb(255, 255, 255);
+  transition: all 1s ease-in-out;
+  animation: morph 8s ease-in-out infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 0;
+    background-color: #0b1233;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .nav-active {
+    transform: translateX(0);
+  }
+
+  .burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .burger.toggle .line2 {
+    opacity: 0;
+  }
+
+  .burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    padding-top: 100px;
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    margin-right: 0;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    margin-top: 20px;
+    width: 250px;
+  }
+}
+
+/* Responsive Section for Tablets (iPads) */
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 40px; /* Make h1 smaller on tablets */
+  }
+
+  h2 {
+    font-size: 25px; /* Make h2 smaller on tablets */
+  }
+
+  p {
+    font-size: 16px; /* Adjust paragraph font size */
+  }
+
+  .hero-content {
+    margin-right: 30px; /* Reduce margin for content */
+  }
+
+  .hero-image img {
+    width: 300px; /* Shrink image */
+  }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 30px; 
+  }
+
+  h2 {
+    font-size: 20px; 
+  }
+
+  p {
+    font-size: 14px; 
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    width: 200px; 
+  }
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* Skills Section */
+#skills {
+    padding: 90px;
+    text-align: center;
+  }
+  
+  #skills h2 {
+    margin-bottom: 40px; /* Add space between the 'Skills' heading and the grid */
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    gap: 10px; /* Reduced gap between grid items */
+  }
+  
+  /* Skill Item Styling */
+  .skill-item img {
+    width: 20%; /* Smaller image size */
+    height: auto;
+    border-radius: 8px;
+    animation: float 6s ease-in-out infinite; /* Apply animation */
+  }
+  
+  .skill-item p {
+    margin-top: 10px; /* Space between the image and the text */
+    font-size: 16px
+  }
+  
+  /* Keyframe Animation for Images */
+  @keyframes float {
+    0% {
+      transform: translateY(0) scale(1); /* Starting state */
+    }
+    50% {
+      transform: translateY(-10px) scale(1.05); /* Move up slightly and scale up */
+    }
+    100% {
+      transform: translateY(0) scale(1); /* Back to starting state */
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    }
+  }
+  
+  /* Mobile View */
+  @media screen and (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr; /* 1 item per row */
+    }
+  }
